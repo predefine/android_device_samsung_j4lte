@@ -17,4 +17,4 @@
 LOCAL_PATH := device/samsung/j4ltejx/
 LOCAL_PATH_TEST := $(call my-dir)
 include $(call all-makefiles-under,$(LOCAL_PATH))
-LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH_TEST)/include
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH_TEST)/include
