@@ -1,15 +1,28 @@
-# Test
-# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-# Orchestrate or schedule a set of jobs
-workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
+jobs:
+  TWRP-j4ltejx:
+   docker:
+      - image: hendramanu/docker-build:build-advanced
+   steps:
+      - run:
+          name: Syncing source
+          no_output_timeout: 20m
+          command: |
+            cd ~
+            mkdir twrp && cd twrp
+            repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.0
+            repo sync -j$(nproc --all)
+            mkdir -p device/samsung && cd device/samsung
+            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME j4ltejx
+            cd ../..
+            source build/envsetup.sh
+            add_lunch_combo omni_j4ltejx-eng
+            add_lunch_combo omni_j4ltejx-userdebug
+            lunch omni_j4ltejx-userdebug
+            mka recoveryimage
 
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - TWRP-j4ltejx
