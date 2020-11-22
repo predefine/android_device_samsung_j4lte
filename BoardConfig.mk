@@ -74,3 +74,4 @@ TW_USE_NEW_MINADBD := true
 TW_INCLUDE_FBE := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_FSTAB := device/samsung/j4ltejx/recovery.fstab
