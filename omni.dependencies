@@ -1,7 +1,7 @@
 [
   {
     "remote":"github",
-    "repository": "TwrpBuilder/android_kernel_samsung_j4lte",
+    "repository": "redline-dev/RedLine_j4ltejx",
     "target_path": "kernel/samsung/j4ltejx",
     "revision":"master"
   }
