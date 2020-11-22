@@ -40,7 +40,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := redline_defconfig
+TARGET_KERNEL_CONFIG := j4lte_00_defconfig
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/j4ltejx
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
