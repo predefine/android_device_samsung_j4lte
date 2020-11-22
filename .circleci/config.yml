@@ -14,12 +14,26 @@ jobs:
             repo sync -j$(nproc --all)
             mkdir -p device/samsung && cd device/samsung
             git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME j4ltejx
-            cd ../..
+
+      - run:
+          name: Building
+          no_output_timeout: 15m
+          command: |
+            cd ~/twrp
             source build/envsetup.sh
             add_lunch_combo omni_j4ltejx-eng
             add_lunch_combo omni_j4ltejx-userdebug
             lunch omni_j4ltejx-userdebug
             mka recoveryimage
+
+      - run:
+          name: Send To Telegram
+          command: |
+            cd ~/twrp/out/target/product/j4ltejx
+            ZIPNAME="TWRP-$(date +%d_%m_%Y_%H_%M)-j4ltejx.zip"
+            sudo zip -r9 $ZIPNAME recovery.img
+            curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocumen
+t
 
 workflows:
   version: 2.1
