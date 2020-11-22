@@ -32,8 +32,7 @@ jobs:
             cd ~/twrp/out/target/product/j4ltejx
             ZIPNAME="TWRP-$(date +%d_%m_%Y_%H_%M)-j4ltejx.zip"
             sudo zip -r9 $ZIPNAME recovery.img
-            curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocumen
-t
+            curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocument
 
 workflows:
   version: 2.1
