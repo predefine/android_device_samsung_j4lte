@@ -85,4 +85,3 @@ AB_OTA_UPDATER := false
 # Adjustment
 TW_NO_CPU_TEMP := true
 TW_EXCLUDE_SUPERSU := true
-
