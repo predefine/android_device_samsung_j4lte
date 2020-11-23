@@ -27,16 +27,24 @@ TARGET_USES_64_BIT_BINDER := true
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/samsung/j4ltejx
-TARGET_KERNEL_CONFIG := j4lte_00_defconfig
-TARGET_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_USES_UNCOMPRESSED_KERNEL := true
+
+# Kernel Source
+# Uncomment for building from source
+#TARGET_KERNEL_SOURCE := kernel/samsung/j4ltejx
+#TARGET_KERNEL_CONFIG := j4lte_00_defconfig
+#TARGET_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
+# Prebuilt kernel
+TARGET_PREBUILT_KERNEL := device/samsung/j4ltejx/Image
+TARGET_PREBUILT_DTB := device/samsung/j4ltejx/dtb.img
 
 # Image
 BOARD_KERNEL_IMAGE_NAME := Image dtb.img
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt $(OUT_DIR)/target/product/j4ltejx/obj/KERNEL_OBJ/arch/$(TARGET_ARCH)/boot/dtb.img
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j4ltejx/dtb.img --board SRPRB21A008RU # --dt $(OUT_DIR)/target/product/j4ltejx/obj/KERNEL_OBJ/arch/$(TARGET_ARCH)/boot/dtb.img
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
