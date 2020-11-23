@@ -71,3 +71,6 @@ AB_OTA_UPDATER := false
 # Adjustment
 TW_EXCLUDE_SUPERSU := true
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+
+# Use busybox
+TW_USE_TOOLBOX := false
