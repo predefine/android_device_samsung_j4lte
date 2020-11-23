@@ -74,3 +74,4 @@ TW_EXCLUDE_SUPERSU := true
 
 # Use busybox
 TW_USE_TOOLBOX := false
+TW_INCLUDE_BUSYBOX := true
