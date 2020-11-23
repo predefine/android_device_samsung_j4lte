@@ -31,10 +31,10 @@ TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 # Kernel Source
 # Uncomment for building from source
-#TARGET_KERNEL_SOURCE := kernel/samsung/j4ltejx
-#TARGET_KERNEL_CONFIG := j4lte_00_defconfig
-#TARGET_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+# TARGET_KERNEL_SOURCE := kernel/samsung/j4ltejx
+# TARGET_KERNEL_CONFIG := j4lte_00_defconfig
+# TARGET_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/
+# TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Prebuilt kernel
 TARGET_PREBUILT_KERNEL := device/samsung/j4ltejx/Image
@@ -50,24 +50,44 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-# TWRP specific build flags
+# TWRP Flags
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
+
+# Display
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 150
+
+# Reboot option
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+
+# RIL
 TW_INCLUDE_NTFS_3G := true
+
+# Partition option
 TW_NO_EXFAT_FUSE := true
+
+# Set to english as default language
 TW_DEFAULT_LANGUAGE := en
+
 TW_USE_NEW_MINADBD := true
+
+# Decryption (maybe)
 TW_INCLUDE_FBE := true
-#BOARD_HAS_NO_REAL_SDCARD := true
+
+# SD Card Things
+# BOARD_HAS_NO_REAL_SDCARD := true
+
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+# Fstab
 TARGET_RECOVERY_FSTAB := device/samsung/j4ltejx/recovery.fstab
+
+# Logging
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
@@ -81,5 +101,5 @@ TW_EXCLUDE_SUPERSU := true
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 
 # Use busybox
-TW_USE_TOOLBOX := true
+TW_USE_TOOLBOX := false
 TW_INCLUDE_BUSYBOX := true
