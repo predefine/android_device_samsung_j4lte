@@ -24,7 +24,7 @@ jobs:
             add_lunch_combo omni_j4ltejx-eng
             add_lunch_combo omni_j4ltejx-userdebug
             export ALLOW_MISSING_DEPENDENCIES=true
-            lunch omni_j4ltejx-userdebug
+            lunch omni_j4ltejx-eng
             mka recoveryimage
 
       - run:
