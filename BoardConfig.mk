@@ -22,8 +22,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Neon Optimization
 ARCH_ARM_HAVE_NEON := true
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
