@@ -23,7 +23,7 @@ jobs:
             source build/envsetup.sh
             add_lunch_combo omni_j4lte-eng
             add_lunch_combo omni_j4lte-userdebug
-            # export ALLOW_MISSING_DEPENDENCIES=true
+            export ALLOW_MISSING_DEPENDENCIES=true
             lunch omni_j4lte-eng
             mka recoveryimage
 
