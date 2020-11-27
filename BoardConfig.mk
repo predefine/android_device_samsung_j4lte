@@ -106,3 +106,24 @@ TW_EXCLUDE_SUPERSU := true
 # Use busybox
 TW_USE_TOOLBOX := false
 TW_INCLUDE_BUSYBOX := true
+
+#
+# SkyHawk Recovery Project (SHRP)
+#
+
+# Path of your SHRP Tree
+SHRP_PATH := device/samsung/j4lte
+# Maintainer name *
+SHRP_MAINTAINER := RedLine_27
+# Device codename *
+SHRP_DEVICE_CODE := j4lte
+# Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
+SHRP_REC_TYPE := Treble
+# Recovery Type (It can be A/B or A_only) [Only for About Section] *
+SHRP_DEVICE_TYPE := A_Only
+SHRP_EDL_MODE := 0
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 0
+SHRP_REC := /dev/block/platform/13540000.dwmmc0/by-name/RECOVERY
