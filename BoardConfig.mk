@@ -46,7 +46,7 @@ TARGET_PREBUILT_DTB := device/samsung/j4lte/dtb.img
 BOARD_KERNEL_IMAGE_NAME := Image dtb.img
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j4lte/dtb.img --board SRPRB21A008RU # --dt $(OUT_DIR)/target/product/j4lte/obj/KERNEL_OBJ/arch/$(TARGET_ARCH)/boot/dtb.img
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j4lte/dtb.img --board SRPRB08A006KU # --dt $(OUT_DIR)/target/product/j4lte/obj/KERNEL_OBJ/arch/$(TARGET_ARCH)/boot/dtb.img
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
