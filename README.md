@@ -1,58 +1,23 @@
-## TWRP Device Tree for Samsung Galaxy J4
+# TWRP tree for Samsung Galaxy J4 (j4lte)
+Official. Maintainer: @hendramanu
 
-• Build Type : Unofficial
+This is TWRP tree for j4lte, which using android-8.1 manifest.
 
-• Status : STABLE
+Basically it's a fork from @hendramanu 's tree forked from @TwrpBuilder 's j4ltejx tree. But since I delete the repo in my github, so it shows that this tree forked from TwrpBuilder. Well, just making things clear.
 
-• Developer : RedLine (Hendra Manudinata)
-
-### How to Install?
-
-• Download latest zip file in 'Release' tab
-
-• Extract downloaded zip, and you'll find 'recovery.img'
-
-• Go to any custom recovery, since we'll install recovery in recovery
-
-• Flash recovery.img as Recovery
-
-• Reboot to recovery
-
-• Done!
-
-XDA Thread : <fill this lol>
-
-### [DEV ONLY!] How To Build
-
-[1] Download Source
-• Prepare your environment and dependencies, then :
-
+# How to build
 ```
+# Clone repo
 mkdir twrp && cd twrp
-
-repo init -u --depth=1 https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-8.1
-
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
 repo sync
-```
 
-[2] Download the tree
+# Clone tree
+git clone https://github.com/TeamWin/android_device_samsung_j4lte device/samsung/j4lte
 
-```
-mkdir -p device/samsung && cd device/samsung
-
-git clone https://github.com/redline-dev/TWRP_j4ltejx --depth=1 j4ltejx
-cd ../..
-
-```
-
-[3] Build it
-
-```
+# Start build
+export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
-
-add_lunch_combo omni_j4ltejx-eng && add_lunch_combo omni_j4ltejx-userdebug
-
+lunch omni_j4lte-eng
 mka recoveryimage
 ```
-
-The builded recovery is in *out/target/product/j4ltejx*
