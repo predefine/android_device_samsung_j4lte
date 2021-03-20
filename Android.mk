@@ -1,6 +1,7 @@
+ifneq ($(filter j4lte,$(TARGET_DEVICE)),)
 
-#LOCAL_PATH := device/samsung/j4lte/
 LOCAL_PATH := $(call my-dir)
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
-include $(CLEAR_VARS)
-LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/include
+
+endif
